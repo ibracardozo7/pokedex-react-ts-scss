@@ -12,7 +12,7 @@ interface ContextProps {
 export const PokemonContext = createContext<ContextProps>({} as ContextProps);
 
 const PokemonProvider = ({ children }: any) => {
-  let allPokemonsUrl = "https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0";
+  let allPokemonsUrl = "https://pokeapi.co/api/v2/pokemon?limit=300&offset=0";
 
   const defaultState: PokeType = {
     name: "All",
