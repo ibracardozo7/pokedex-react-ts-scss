@@ -7,7 +7,7 @@ interface Props {
   perPage?: number;
 }
 
-export const PokemonList = ({ pokemonsUrl, page, perPage }: Props) => {
+export const PokemonList = ({ pokemonsUrl }: Props) => {
   return (
     <div className={styles.pokemons}>
       {pokemonsUrl?.map((pokemonUrl) => (
