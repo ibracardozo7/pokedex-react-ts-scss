@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const PokemonCard = ({ url }: Props) => {
-  console.log(url);
+  // console.log(url);
   const { pokemon } = usePokemon(url)
   // console.log("pokecard", pokemon);
 

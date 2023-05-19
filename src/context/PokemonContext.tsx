@@ -12,7 +12,7 @@ interface ContextProps {
 export const PokemonContext = createContext<ContextProps>({} as ContextProps);
 
 const PokemonProvider = ({ children }: any) => {
-  let allPokemonsUrl = "https://pokeapi.co/api/v2/pokemon?limit=300&offset=0";
+  let allPokemonsUrl = "https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0";
 
   const defaultState: PokeType = {
     name: "All",
@@ -29,7 +29,7 @@ const PokemonProvider = ({ children }: any) => {
     setFilterSelected(type)
 
     const { data } = await axios.get(type?.url!)
-    console.log("asd", data);
+    console.log("data-->", data);
     let pokemons = data?.pokemon?.map(
       ({ pokemon }: PokemonsByTypeResult) => pokemon?.url)
 
@@ -41,25 +41,26 @@ const PokemonProvider = ({ children }: any) => {
 
   const getPokemonsTypes = async () => {
     const { data } = await axios.get("https://pokeapi.co/api/v2/type")
-    console.log("types-->", data);
+    // console.log("types-->", data.results);
+    
     setTypes([...types, ...data.results])
+    
   }
-
+  
   const getAllPokemons = async () => {
     const { data } = await axios.get(allPokemonsUrl);
-    console.log("data-->", data);
-
+    // console.log("data-->", data);
+    
     let pokemons = data?.results?.map((poke: AllPokemonsResult) => poke?.url);
     // console.log("poke", pokemons);
-
+    
     setAllPokemons(pokemons);
     setPokemonsFiltered(pokemons);
   };
-
+  
   useEffect(() => {
     getAllPokemons()
     getPokemonsTypes()
-    // changeTypeSelected()
   },[])
 
   return (
