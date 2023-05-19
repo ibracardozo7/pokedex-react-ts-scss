@@ -16,7 +16,7 @@ export const Header = ({pokemon}: Props) => {
     <header>
       <PokeballIconBig className={styles.pokeball} />
       <div className={styles.left}>
-        <ArrowLeftIcon onclick={() => navigate(-1)} />
+        <ArrowLeftIcon onClick={() => navigate(-1)} />
         <span>{pokemon?.name}</span>
       </div>
       <p>#{pokemon?.id}</p>

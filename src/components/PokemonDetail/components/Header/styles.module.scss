@@ -16,6 +16,17 @@ header {
     svg {
       cursor: pointer;
     }
+
+    svg:hover {
+      transform: scale(1.2);
+      transition-duration: .3s;
+    }
+
+    span {
+      font-weight: bold;
+      text-transform: capitalize;
+      font-size: 32px;
+    }
   }
 
   .pokeball {

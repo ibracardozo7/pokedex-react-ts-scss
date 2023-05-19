@@ -1,7 +1,11 @@
 import { IPokemon } from "../../interfaces/interfaces";
 import { background } from "../../utils/BackgroundsByType";
 import { Loader } from "../Loader";
+import { BaseStats } from "./components/BaseStats";
 import { Header } from "./components/Header";
+import { PokeTypes } from "./components/PokeTypes";
+import { Stats } from "./components/Stats";
+import { Title } from "./components/Title";
 
 import styles from "./styles.module.scss";
 
@@ -34,11 +38,11 @@ export const PokemonDetail = ({ pokemon }: Props) => {
           }
           alt={pokemon?.name}
         />
-        {/* <PokeTypes pokemon={pokemon} /> */}
-        {/* <Title content="About" backgroundSelected={backgroundSelected} /> */}
-        {/* <Stats pokemon={pokemon} /> */}
-        {/* <Title content="Base Stats" backgroundSelected={backgroundSelected} /> */}
-        {/* <BaseStats pokemon={pokemon} backgroundSelected={backgroundSelected} /> */}
+        <PokeTypes pokemon={pokemon} />
+        <Title content="About" backgroundSelected={backgroundSelected} />
+        <Stats pokemon={pokemon} />
+        <Title content="Base Stats" backgroundSelected={backgroundSelected} />
+        <BaseStats pokemon={pokemon} backgroundSelected={backgroundSelected} />
       </div>
     </div>
   )
