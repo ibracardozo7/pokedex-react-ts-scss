@@ -8,9 +8,11 @@
 
   .info {
     max-width: 650px;
+    height: 100%;
+    // overflow: scroll;
     width: 95%;
     background-color: white;
-    height: 65vh;
+    // height: 65vh;
     bottom: 0;
     position: relative;
     margin-bottom: 1rem;
@@ -27,5 +29,18 @@
       height: 275px;
       object-fit: contain;
     }
+  }
+}
+
+.loadingContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .info {
+    margin-top: 12rem;
   }
 }

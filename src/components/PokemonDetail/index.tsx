@@ -36,6 +36,7 @@ export const PokemonDetail = ({ pokemon }: Props) => {
             pokemon?.sprites?.other?.dream_world?.front_default ||
             pokemon?.sprites?.front_default
           }
+          className={styles.imgPoke}
           alt={pokemon?.name}
         />
         <PokeTypes pokemon={pokemon} />

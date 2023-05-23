@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const BaseStats = ({ pokemon, backgroundSelected }: Props) => {
-  const maxStat = 200
+  const maxStat = 150
   const baseStatsNames: any = {
     hp: "hp",
     attack: "atk",
