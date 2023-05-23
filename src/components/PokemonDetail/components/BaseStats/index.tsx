@@ -9,13 +9,22 @@ interface Props {
 
 export const BaseStats = ({ pokemon, backgroundSelected }: Props) => {
   const maxStat = 200
+  const baseStatsNames: any = {
+    hp: "hp",
+    attack: "atk",
+    defense: "def",
+    "special-attack": "satk",
+    "special-defense": "sdef",
+    speed: "spd"
+  }
   
   return (
     <div className={styles.baseStats}>
       {pokemon?.stats.map(({base_stat, stat: { name }}) => (
         <div key={name} className={styles.item}>
           <span style={{color: backgroundSelected}}>
-            {name}
+            {/* {name} */}
+            {baseStatsNames[name]}
           </span>
           <div className={styles.rigth}>
             <p>0{base_stat}</p>

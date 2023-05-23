@@ -23,9 +23,7 @@ export const Pagination = ({
       <button disabled={page ===  1} onClick={previousPage}>
         &lt;
       </button>
-      <span>{page}</span>
-      <span>/</span>
-      <span>{lastPage}</span>
+      <span>{page} / {lastPage}</span>
       <button disabled={page === lastPage} onClick={nextPage}>
         &gt;
       </button>
